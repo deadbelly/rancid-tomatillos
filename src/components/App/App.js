@@ -21,7 +21,10 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header 
+        selectedId={this.state.selectedId} 
+        selectMovie={this.selectMovie}
+        />
         <main>
           {this.state.selectedId ? <MovieDetail movie={this.state.movies.find(movie => movie.id === this.state.selectedId)}/> : 
             <MovieList 
