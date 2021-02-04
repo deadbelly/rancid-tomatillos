@@ -1,4 +1,5 @@
 import React from 'react';
+import './MovieList.css';
 import Poster from '../Poster/Poster';
 
 const MovieList = ({movies}) => {

@@ -2,7 +2,11 @@ import React from 'react';
 
 const Poster = ({id, title, rating, imgSrc}) => {
   return (
-    <p>hi!</p>
+    <div>
+      <img src={imgSrc}/>
+      <h2>{title}</h2>
+      <p>{rating.toFixed(1)}</p>
+    </div>
   )
 }
 
