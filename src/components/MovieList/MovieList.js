@@ -11,7 +11,6 @@ const MovieList = ({movies}) => {
           title={movie.title}
           rating={movie.average_rating}
           imgSrc={movie.poster_path}
-          selectMovie = null
         />)}
     </main>
   );
