@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../Header/Header'
 import MovieList from '../MovieList/MovieList'
 import movieData from '../../Data/movieData'
+import MovieDetail from '../MovieDetail/MovieDetail'
 import './App.css';
 
 class App extends React.Component {
@@ -21,11 +22,13 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
-        <MovieList 
-          movies={this.state.movies} 
-          selectMovie={this.selectMovie}
-          movie={this.state.movies.find(movie => movie.id === this.state.selectedId)}
-        />
+        <main>
+          {this.state.selectedId ? <MovieDetail movie={this.state.movies.find(movie => movie.id === this.state.selectedId)}/> : 
+            <MovieList 
+              movies={this.state.movies} 
+              selectMovie={this.selectMovie}
+          />}
+        </main>
       </div>
     );
   }
