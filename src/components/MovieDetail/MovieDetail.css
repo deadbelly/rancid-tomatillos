@@ -1,0 +1,14 @@
+.border {
+  border: solid black 0.1em;
+}
+
+.movie-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.poster-image {
+  height: auto;
+  width: 25%;
+}

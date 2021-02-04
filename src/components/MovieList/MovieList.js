@@ -2,9 +2,9 @@ import React from 'react';
 import './MovieList.css';
 import Poster from '../Poster/Poster';
 
-const MovieList = ({movies}) => {
+const MovieList = ({movies, selectMovie}) => {
   return (
-    <main>
+    <div className='poster-grid'>
       {movies.map(movie =>
         <Poster
           key={movie.id}
@@ -12,8 +12,9 @@ const MovieList = ({movies}) => {
           title={movie.title}
           rating={movie.average_rating}
           imgSrc={movie.poster_path}
+          selectMovie={selectMovie}
         />)}
-    </main>
+    </div>
   );
 }
 
