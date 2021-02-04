@@ -3,10 +3,10 @@ import './MovieList.css';
 import Poster from '../Poster/Poster';
 import MovieDetail from '../MovieDetail/MovieDetail';
 
-const MovieList = ({movies, selectMovie, selectedId}) => {
+const MovieList = ({movies, selectMovie, movie}) => {
   return (
     <main>
-      {selectedId ? <MovieDetail id={selectedId} /> :   
+      {movie ? <MovieDetail movie={movie}/> :   
         movies.map(movie =>
           <Poster
             key={movie.id}

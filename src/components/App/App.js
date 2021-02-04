@@ -24,7 +24,7 @@ class App extends React.Component {
         <MovieList 
           movies={this.state.movies} 
           selectMovie={this.selectMovie}
-          selectedId={this.state.selectedId}
+          movie={this.state.movies.find(movie => movie.id === this.state.selectedId)}
         />
       </div>
     );
