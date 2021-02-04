@@ -1,11 +1,25 @@
+import React from 'react';
+import Header from '../Header/Header'
+import MovieLise from '../MovieList/MovieList'
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-    <h1>I WORK!</h1>
-    </div>
-  );
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      movies: [],
+      selectedMovie: 0
+    }
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Header />
+        <MovieList />
+      </div>
+    );
+  }
 }
 
 export default App;
