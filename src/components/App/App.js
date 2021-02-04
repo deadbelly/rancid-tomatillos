@@ -9,19 +9,23 @@ class App extends React.Component {
     super();
     this.state = {
       movies: movieData.movies,
-      selectedMovie: 0
+      selectedId: 0
     };
   }
 
   selectMovie = id => {
-    this.setState({selectedMovie: id})
+    this.setState({selectedId: id})
   }
 
   render() {
     return (
       <div className="App">
         <Header />
-        <MovieList movies={this.state.movies} selectMovie={this.selectMovie}/>
+        <MovieList 
+          movies={this.state.movies} 
+          selectMovie={this.selectMovie}
+          selectedId={this.state.selectedId}
+        />
       </div>
     );
   }
