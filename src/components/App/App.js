@@ -13,11 +13,15 @@ class App extends React.Component {
     };
   }
 
+  selectMovie = id => {
+    this.setState({selectedMovie: id})
+  }
+
   render() {
     return (
       <div className="App">
         <Header />
-        <MovieList movies={this.state.movies}/>
+        <MovieList movies={this.state.movies} selectMovie={this.selectMovie}/>
       </div>
     );
   }
