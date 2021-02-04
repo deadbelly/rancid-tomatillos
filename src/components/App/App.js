@@ -10,7 +10,7 @@ class App extends React.Component {
     super();
     this.state = {
       movies: [],
-      selectedId: 0
+      selectedDetails: null
     };
   }
 
@@ -18,22 +18,25 @@ class App extends React.Component {
     fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
       .then(response => response.json())
       .then(data => this.setState({movies: data.movies}))
+      .catch()
   }
 
   selectMovie = id => {
-    //fetch movie from api with id, then assign that data to state.selected
-    this.setState({selectedId: id})
+    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
+      .then(response => response.json())
+      .then(data => this.setState({selectedDetails: data.movie}))
+      .catch()
   }
 
   render() {
     return (
       <div className="App">
         <Header
-        selectedId={this.state.selectedId}
+        selectedDetails={this.state.selectedDetails}
         selectMovie={this.selectMovie}
         />
         <main>
-          {this.state.selectedId ? <MovieDetail movie={this.state.movies.find(movie => movie.id === this.state.selectedId)}/> :
+          {this.state.selectedDetails ? <MovieDetail movie={this.state.selectedDetails}/> :
             <MovieList
               movies={this.state.movies}
               selectMovie={this.selectMovie}

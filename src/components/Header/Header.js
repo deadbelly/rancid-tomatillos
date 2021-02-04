@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Header = ({selectedId, selectMovie}) => {
+const Header = ({selectedDetails, selectMovie}) => {
   return (
     <header>
-      {selectedId !== 0 && <button onClick={() => selectMovie(0)}>HOME</button>}
+      {selectedDetails && <button onClick={() => selectMovie(0)}>HOME</button>}
       <h1>Rancid Tomatillos</h1>
     </header>
   );
