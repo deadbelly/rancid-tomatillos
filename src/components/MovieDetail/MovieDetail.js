@@ -9,12 +9,12 @@ const MovieDetail = ({movie}) => {
         <p>Genres: {movie.genres.map(genre => genre.name)}</p>
       </div>
       <div className='movie-info'>
-        <img src={movie.poster_path} />
-        <article>
-          <p>{movie.tagline}</p>
-          <p>{movie.overview}</p>
+        <img className='poster-image border' src={movie.poster_path} />
+        <article className='border'>
+          <h3>{movie.tagline}</h3>
+          <p className='overview'>{movie.overview}</p>
         </article>
-        <article>
+        <article className='border'>
           <p>Runtime: {movie.runtime} minutes</p>
           <p>Budget: ${movie.budget}</p>
           <p>Revenue: ${movie.revenue}</p>
