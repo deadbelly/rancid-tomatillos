@@ -10,7 +10,8 @@ class App extends React.Component {
     super();
     this.state = {
       movies: [],
-      selectedDetails: null
+      selectedDetails: null,
+      error: false,
     };
   }
 
@@ -18,14 +19,26 @@ class App extends React.Component {
     fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
       .then(response => response.json())
       .then(data => this.setState({movies: data.movies}))
-      .catch()
+      .catch(error => this.setState({error: true}))
   }
 
   selectMovie = id => {
-    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
-      .then(response => response.json())
+    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/:${id}`)
+      .then(response => {response.ok && response.json()})
       .then(data => this.setState({selectedDetails: data.movie}))
-      .catch()
+      .catch(error => this.setState({error: true}))
+  }
+
+  chooseContent() {
+    if (this.state.error) {
+      return <h2>Something went wrong!</h2>
+    } else if (this.state.selectedDetails){
+      return <MovieDetail movie={this.state.selectedDetails}/>
+    } else {
+      return <MovieList
+        movies={this.state.movies}
+        selectMovie={this.selectMovie}/>
+    }
   }
 
   render() {
@@ -36,11 +49,7 @@ class App extends React.Component {
         selectMovie={this.selectMovie}
         />
         <main>
-          {this.state.selectedDetails ? <MovieDetail movie={this.state.selectedDetails}/> :
-            <MovieList
-              movies={this.state.movies}
-              selectMovie={this.selectMovie}
-          />}
+          {this.chooseContent()}
         </main>
       </div>
     );
