@@ -17,16 +17,20 @@ class App extends React.Component {
 
   componentDidMount() {
     fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-      .then(response => response.json())
+      .then(response => {if (response.ok) {return response.json()}})
       .then(data => this.setState({movies: data.movies}))
       .catch(error => this.setState({error: true}))
   }
 
   selectMovie = id => {
-    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/:${id}`)
-      .then(response => {response.ok && response.json()})
+    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
+      .then(response => {if (response.ok) {return response.json()}})
       .then(data => this.setState({selectedDetails: data.movie}))
       .catch(error => this.setState({error: true}))
+  }
+
+  clearSelection = () => {
+    this.setState({selectedDetails: null})
   }
 
   chooseContent() {
@@ -46,7 +50,7 @@ class App extends React.Component {
       <div className="App">
         <Header
         selectedDetails={this.state.selectedDetails}
-        selectMovie={this.selectMovie}
+        clearSelection={this.clearSelection}
         />
         <main>
           {this.chooseContent()}
