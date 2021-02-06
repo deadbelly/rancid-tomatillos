@@ -1,11 +1,14 @@
 img {
+  border: 5px solid black;
+  align-self: center;
   height: auto;
   width: 100%;
 }
 
 .poster {
+  text-align: center;
   bottom: 0;
   margin: 0;
   max-height: 50em;
-  width: 25em;
+  width: 20em;
 }
