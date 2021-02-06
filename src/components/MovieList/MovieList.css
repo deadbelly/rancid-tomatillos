@@ -3,6 +3,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 1.5em;
-  padding: 1.5em;
+  padding: 2em;
   height: 80vh;
 }

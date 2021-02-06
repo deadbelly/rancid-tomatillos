@@ -1,14 +1,16 @@
 img {
-  border: 5px solid black;
+  border: 5px solid white;
   align-self: center;
   height: auto;
   width: 100%;
 }
 
+.poster:hover {
+  transform: scale(1.1, 1.1);
+}
+
 .poster {
-  text-align: center;
-  bottom: 0;
-  margin: 0;
   max-height: 50em;
   width: 20em;
+  transition: .6s ease;
 }
