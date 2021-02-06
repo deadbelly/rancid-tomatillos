@@ -9,7 +9,7 @@ const MovieDetail = ({movie}) => {
         <p>Genres: {movie.genres}</p>
       </div>
       <div className='movie-info'>
-        <img className='poster-image border' src={movie.poster_path} />
+        <img className='poster-image border' src={movie.backdrop_path} />
         <article className='border'>
           <h3>{movie.tagline}</h3>
           <p className='overview'>{movie.overview}</p>
