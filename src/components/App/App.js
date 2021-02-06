@@ -9,28 +9,51 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      movies: movieData.movies,
-      selectedId: 0
+      movies: [],
+      selectedDetails: null,
+      error: false,
     };
   }
 
+  componentDidMount() {
+    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+      .then(response => {if (response.ok) {return response.json()}})
+      .then(data => this.setState({movies: data.movies}))
+      .catch(error => this.setState({error: true}))
+  }
+
   selectMovie = id => {
-    this.setState({selectedId: id})
+    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
+      .then(response => {if (response.ok) {return response.json()}})
+      .then(data => this.setState({selectedDetails: data.movie}))
+      .catch(error => this.setState({error: true}))
+  }
+
+  clearSelection = () => {
+    this.setState({selectedDetails: null})
+  }
+
+  chooseContent() {
+    if (this.state.error) {
+      return <h2>Something went wrong!</h2>
+    } else if (this.state.selectedDetails){
+      return <MovieDetail movie={this.state.selectedDetails}/>
+    } else {
+      return <MovieList
+        movies={this.state.movies}
+        selectMovie={this.selectMovie}/>
+    }
   }
 
   render() {
     return (
       <div className="App">
-        <Header 
-        selectedId={this.state.selectedId} 
-        selectMovie={this.selectMovie}
+        <Header
+        selectedDetails={this.state.selectedDetails}
+        clearSelection={this.clearSelection}
         />
         <main>
-          {this.state.selectedId ? <MovieDetail movie={this.state.movies.find(movie => movie.id === this.state.selectedId)}/> : 
-            <MovieList 
-              movies={this.state.movies} 
-              selectMovie={this.selectMovie}
-          />}
+          {this.chooseContent()}
         </main>
       </div>
     );

@@ -6,7 +6,7 @@ const MovieDetail = ({movie}) => {
     <section>
       <div className='detail-page-header'>
         <h2>{movie.title}</h2>
-        <p>Genres: {movie.genres.map(genre => genre.name)}</p>
+        <p>Genres: {movie.genres}</p>
       </div>
       <div className='movie-info'>
         <img className='poster-image border' src={movie.poster_path} />
