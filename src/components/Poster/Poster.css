@@ -1,13 +1,17 @@
-img {
+.poster-img {
   border: 5px solid black;
   align-self: center;
   height: auto;
   width: 100%;
 }
+.poster-img:hover {
+  opacity: 80%;
+}
 
 .poster:hover, .poster:focus {
   cursor: pointer;
   transform: scale(1.1, 1.1);
+  color: #8E96DF;
 }
 
 .poster {
