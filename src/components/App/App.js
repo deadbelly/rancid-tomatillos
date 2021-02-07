@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../Header/Header'
 import MovieList from '../MovieList/MovieList'
 import MovieDetail from '../MovieDetail/MovieDetail'
-import LoadingMessage from '../LoadingMessage'
+import Loader from './Loader'
 import './App.css';
 import { trackPromise } from 'react-promise-tracker';
 
@@ -53,8 +53,8 @@ class App extends React.Component {
         selectedDetails={this.state.selectedDetails}
         clearSelection={this.clearSelection}
         />
-        <LoadingMessage />
         <main>
+          <Loader />
           {this.chooseContent()}
         </main>
       </div>

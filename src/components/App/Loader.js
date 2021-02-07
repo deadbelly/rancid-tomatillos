@@ -1,11 +1,9 @@
 import React from 'react'
 import { usePromiseTracker } from "react-promise-tracker";
-import './LoadingMessage.css'
 import { useState } from "react";
-// import { css } from "@emotion/core";
 import ClipLoader from "react-spinners/ClipLoader";
 
-const LoadingMessage = () => {
+const Loader = () => {
 
   return (
     <div>
@@ -14,4 +12,4 @@ const LoadingMessage = () => {
   )
 }
 
-export default LoadingMessage
+export default Loader
