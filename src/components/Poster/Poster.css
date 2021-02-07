@@ -5,7 +5,7 @@ img {
   width: 100%;
 }
 
-.poster:hover {
+.poster:hover, .poster:focus {
   cursor: pointer;
   transform: scale(1.1, 1.1);
 }
@@ -19,4 +19,9 @@ img {
   width: 15em;
   transition: .6s ease;
   line-height: 0.7em;
+}
+
+.long-title {
+  font-size: 1.4em;
+  line-height: 1em;
 }
