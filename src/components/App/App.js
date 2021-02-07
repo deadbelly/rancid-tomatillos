@@ -2,7 +2,9 @@ import React from 'react';
 import Header from '../Header/Header'
 import MovieList from '../MovieList/MovieList'
 import MovieDetail from '../MovieDetail/MovieDetail'
+import LoadingMessage from '../LoadingMessage'
 import './App.css';
+import { trackPromise } from 'react-promise-tracker';
 
 class App extends React.Component {
   constructor() {
@@ -15,10 +17,10 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+    trackPromise(fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
       .then(response => {if (response.ok) {return response.json()}})
       .then(data => this.setState({movies: data.movies}))
-      .catch(error => this.setState({error: true}))
+      .catch(error => this.setState({error: true})))
   }
 
   selectMovie = id => {
@@ -51,6 +53,7 @@ class App extends React.Component {
         selectedDetails={this.state.selectedDetails}
         clearSelection={this.clearSelection}
         />
+        <LoadingMessage />
         <main>
           {this.chooseContent()}
         </main>
