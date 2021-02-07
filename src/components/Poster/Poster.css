@@ -1,16 +1,22 @@
 img {
-  border: 5px solid white;
+  border: 5px solid black;
   align-self: center;
   height: auto;
   width: 100%;
 }
 
 .poster:hover {
+  cursor: pointer;
   transform: scale(1.1, 1.1);
 }
 
 .poster {
-  max-height: 50em;
-  width: 20em;
+  color: black;
+  position: relative;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  max-height: 30em;
+  width: 15em;
   transition: .6s ease;
+  line-height: 0.7em;
 }
