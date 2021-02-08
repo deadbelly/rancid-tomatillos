@@ -14,17 +14,17 @@ const MovieDetail = ({movie}) => {
     <section className='movie-detail-page'>
       <div className='backdrop-img' style={{backgroundImage:`url(${movie.backdrop_path})`}}>
         <article className='movie-spec movie-container border'>
-          <h2 className='movie-title'>{movie.title}</h2>
-          <p>Release Date: {formatDate(movie.release_date)}</p>
-          <p>Genres: {genres}</p>
-          <p>Runtime: {movie.runtime} minutes</p>
-          <p>Budget: ${new Intl.NumberFormat().format(movie.budget)}</p>
-          <p>Revenue: ${new Intl.NumberFormat().format(movie.revenue)}</p>
+          <h2 className={movie.title.length >= 20 ? 'long-movie-title' : 'movie-title'}>{movie.title}</h2>
+          <p><b>Release Date:</b> {formatDate(movie.release_date)}</p>
+          <p><b>Genres:</b> {genres}</p>
+          <p><b>Runtime:</b> {movie.runtime} minutes</p>
+          <p><b>Budget:</b> ${new Intl.NumberFormat().format(movie.budget)}</p>
+          <p><b>Revenue:</b> ${new Intl.NumberFormat().format(movie.revenue)}</p>
         </article>
         <article className='movie-info movie-container border'>
           <h3>{movie.tagline}</h3>
           <p className='overview'>{movie.overview}</p>
-          <p>{movie.average_rating}/10 {String.fromCodePoint(0x1F345)}</p>
+          <p><b>Freshness:</b> {movie.average_rating.toFixed(2)*10}%</p>
         </article>
       </div>
     </section>
