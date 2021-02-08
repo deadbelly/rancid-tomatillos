@@ -19,12 +19,13 @@ class App extends React.Component {
 
   componentDidMount() {
     trackPromise(fetchRequests.getAllMovies()
-      .then(data => this.setState({movies: data.movies}))
+      .then(data => this.setState({movies: data.movies, selectedDetails: null}))
       .catch(error => this.setState({error: true}))
     )
   }
 
   selectMovie = id => {
+    this.setState({movies: []})
     trackPromise(
       fetchRequests.getSelectedMovie(id)
       .then(data => this.setState({selectedDetails: data.movie}))
@@ -34,6 +35,7 @@ class App extends React.Component {
 
   clearSelection = () => {
     this.setState({selectedDetails: null})
+    this.componentDidMount()
   }
 
   chooseContent() {
