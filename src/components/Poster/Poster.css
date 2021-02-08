@@ -1,11 +1,31 @@
-img {
+.poster-img {
+  border: 5px solid black;
+  align-self: center;
   height: auto;
   width: 100%;
 }
+.poster-img:hover {
+  opacity: 80%;
+}
+
+.poster:hover, .poster:focus {
+  cursor: pointer;
+  transform: scale(1.1, 1.1);
+  color: #8E96DF;
+}
 
 .poster {
-  bottom: 0;
-  margin: 0;
-  max-height: 50em;
-  width: 25em;
+  color: black;
+  position: relative;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  max-height: 30em;
+  width: 15em;
+  transition: .6s ease;
+  line-height: 0.7em;
+}
+
+.long-title {
+  font-size: 1.4em;
+  line-height: 1em;
 }
