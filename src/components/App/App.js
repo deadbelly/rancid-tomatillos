@@ -4,6 +4,7 @@ import MovieList from '../MovieList/MovieList'
 import MovieDetail from '../MovieDetail/MovieDetail'
 import Loader from './Loader'
 import './App.css';
+import fetchRequests from '../../fetchRequests'
 import { trackPromise } from 'react-promise-tracker';
 
 class App extends React.Component {
@@ -17,17 +18,18 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    trackPromise(fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-      .then(response => {if (response.ok) {return response.json()}})
+    trackPromise(fetchRequests.getAllMovies()
       .then(data => this.setState({movies: data.movies}))
-      .catch(error => this.setState({error: true})))
+      .catch(error => this.setState({error: true}))
+    )
   }
 
   selectMovie = id => {
-    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
-      .then(response => {if (response.ok) {return response.json()}})
+    trackPromise(
+      fetchRequests.getSelectedMovie(id)
       .then(data => this.setState({selectedDetails: data.movie}))
       .catch(error => this.setState({error: true}))
+    )
   }
 
   clearSelection = () => {
