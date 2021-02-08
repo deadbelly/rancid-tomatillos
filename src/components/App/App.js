@@ -18,24 +18,27 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    this.loadListData()
+  }
+
+  loadListData = () => {
+    this.setState({selectedDetails: null})
     trackPromise(fetchRequests.getAllMovies()
       .then(data => this.setState({movies: data.movies, selectedDetails: null}))
       .catch(error => this.setState({error: true}))
     )
   }
 
-  selectMovie = id => {
+  loadSelectionData = id => {
     this.setState({movies: []})
     trackPromise(
       fetchRequests.getSelectedMovie(id)
       .then(data => this.setState({selectedDetails: data.movie}))
-      .catch(error => this.setState({error: true}))
+      .catch(error => {
+        this.setState({error: true})
+        console.log(error)
+      })
     )
-  }
-
-  clearSelection = () => {
-    this.setState({selectedDetails: null})
-    this.componentDidMount()
   }
 
   chooseContent() {
@@ -46,7 +49,7 @@ class App extends React.Component {
     } else {
       return <MovieList
         movies={this.state.movies}
-        selectMovie={this.selectMovie}/>
+        selectMovie={this.loadSelectionData}/>
     }
   }
 
@@ -55,7 +58,7 @@ class App extends React.Component {
       <div className="App">
         <Header
         selectedDetails={this.state.selectedDetails}
-        clearSelection={this.clearSelection}
+        clearSelection={this.loadListData}
         />
         <main>
           <Loader />
