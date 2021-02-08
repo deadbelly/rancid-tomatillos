@@ -1,0 +1,27 @@
+header {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  font-family: 'Oswald', sans-serif;
+  height: 9vh;
+  text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+  justify-content: flex-start;
+  background-color: #BFDF8E;
+}
+
+h1 {
+  margin-top: 1em;
+  font-size: 3em;
+}
+
+.icon {
+  width: 4%;
+  height: auto;
+}
+
+button {
+  cursor: pointer;
+  color: white;
+  border: none;
+  background: none;
+}

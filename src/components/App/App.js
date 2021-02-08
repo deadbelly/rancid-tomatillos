@@ -2,7 +2,10 @@ import React from 'react';
 import Header from '../Header/Header'
 import MovieList from '../MovieList/MovieList'
 import MovieDetail from '../MovieDetail/MovieDetail'
+import Loader from './Loader'
 import './App.css';
+import fetchRequests from '../../fetchRequests'
+import { trackPromise } from 'react-promise-tracker';
 
 class App extends React.Component {
   constructor() {
@@ -15,21 +18,27 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-      .then(response => {if (response.ok) {return response.json()}})
-      .then(data => this.setState({movies: data.movies}))
-      .catch(error => this.setState({error: true}))
+    this.loadListData()
   }
 
-  selectMovie = id => {
-    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
-      .then(response => {if (response.ok) {return response.json()}})
-      .then(data => this.setState({selectedDetails: data.movie}))
-      .catch(error => this.setState({error: true}))
-  }
-
-  clearSelection = () => {
+  loadListData = () => {
     this.setState({selectedDetails: null})
+    trackPromise(fetchRequests.getAllMovies()
+      .then(data => this.setState({movies: data.movies, selectedDetails: null}))
+      .catch(error => this.setState({error: true}))
+    )
+  }
+
+  loadSelectionData = id => {
+    this.setState({movies: []})
+    trackPromise(
+      fetchRequests.getSelectedMovie(id)
+      .then(data => this.setState({selectedDetails: data.movie}))
+      .catch(error => {
+        this.setState({error: true})
+        console.log(error)
+      })
+    )
   }
 
   chooseContent() {
@@ -40,7 +49,7 @@ class App extends React.Component {
     } else {
       return <MovieList
         movies={this.state.movies}
-        selectMovie={this.selectMovie}/>
+        selectMovie={this.loadSelectionData}/>
     }
   }
 
@@ -49,9 +58,10 @@ class App extends React.Component {
       <div className="App">
         <Header
         selectedDetails={this.state.selectedDetails}
-        clearSelection={this.clearSelection}
+        clearSelection={this.loadListData}
         />
         <main>
+          <Loader />
           {this.chooseContent()}
         </main>
       </div>
