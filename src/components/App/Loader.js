@@ -1,6 +1,5 @@
 import React from 'react'
 import { usePromiseTracker } from "react-promise-tracker";
-import { useState } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
 
 const Loader = () => {

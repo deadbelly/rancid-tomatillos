@@ -3,7 +3,7 @@ const fetchRequests = {
     if (response.ok) {
       return response.json()
     }
-    console.log(response)
+    throw response
   },
 
   getAllMovies() {

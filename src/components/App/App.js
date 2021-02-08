@@ -3,6 +3,7 @@ import Header from '../Header/Header'
 import MovieList from '../MovieList/MovieList'
 import MovieDetail from '../MovieDetail/MovieDetail'
 import Loader from './Loader'
+import Error from '../Error/Error'
 import './App.css';
 import fetchRequests from '../../fetchRequests'
 import { trackPromise } from 'react-promise-tracker';
@@ -13,7 +14,7 @@ class App extends React.Component {
     this.state = {
       movies: [],
       selectedDetails: null,
-      error: false,
+      error: null,
     };
   }
 
@@ -25,7 +26,7 @@ class App extends React.Component {
     this.setState({selectedDetails: null})
     trackPromise(fetchRequests.getAllMovies()
       .then(data => this.setState({movies: data.movies, selectedDetails: null}))
-      .catch(error => this.setState({error: true}))
+      .catch(error => this.setState({error: error}))
     )
   }
 
@@ -35,15 +36,14 @@ class App extends React.Component {
       fetchRequests.getSelectedMovie(id)
       .then(data => this.setState({selectedDetails: data.movie}))
       .catch(error => {
-        this.setState({error: true})
-        console.log(error)
+        this.setState({error: error})
       })
     )
   }
 
   chooseContent() {
-    if (this.state.error) {
-      return <h2>Something went wrong!</h2>
+    if (this.state.error !== null) {
+      return <Error status={this.state.error.status} text={this.state.error.statusText}/>
     } else if (this.state.selectedDetails){
       return <MovieDetail movie={this.state.selectedDetails}/>
     } else {
