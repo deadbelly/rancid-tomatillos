@@ -7,6 +7,7 @@ import Error from '../Error/Error'
 import './App.css';
 import fetchRequests from '../../fetchRequests'
 import { trackPromise } from 'react-promise-tracker';
+import { Route } from 'react-router-dom';
 
 class App extends React.Component {
   constructor() {
@@ -63,6 +64,10 @@ class App extends React.Component {
         <main>
           <Loader />
           {this.chooseContent()}
+          <Route path="/" component={ () => <MovieList
+            movies={this.state.movies}
+            selectMovie={this.loadSelectionData}/> }
+          />
         </main>
       </div>
     );
