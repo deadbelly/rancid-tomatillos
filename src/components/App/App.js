@@ -19,10 +19,6 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.loadListData()
-  }
-
-  loadListData = () => {
     trackPromise(fetchRequests.getAllMovies()
       .then(data => this.setState({movies: data.movies, selectedDetails: null}))
       .catch(error => this.setState({error: error}))
