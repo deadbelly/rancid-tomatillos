@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../Header/Header'
 import MovieList from '../MovieList/MovieList'
-import MovieDetail from '../MovieDetail/MovieDetail'
+import MovieDetailContainer from '../MovieDetail/MovieDetailContainer'
 import Loader from './Loader'
 import Error from '../Error/Error'
 import './App.css';
@@ -42,17 +42,17 @@ class App extends React.Component {
     )
   }
 
-  chooseContent() {
-    if (this.state.error !== null) {
-      return <Error status={this.state.error.status} text={this.state.error.statusText}/>
-    } else if (this.state.selectedDetails){
-      return <MovieDetail movie={this.state.selectedDetails}/>
-    } else {
-      return <MovieList
-        movies={this.state.movies}
-        selectMovie={this.loadSelectionData}/>
-    }
-  }
+  // chooseContent() {
+  //   if (this.state.error !== null) {
+  //     return <Error status={this.state.error.status} text={this.state.error.statusText}/>
+  //   } else if (this.state.selectedDetails){
+  //     return <MovieDetail movie={this.state.selectedDetails}/>
+  //   } else {
+  //     return <MovieList
+  //       movies={this.state.movies}
+  //       selectMovie={this.loadSelectionData}/>
+  //   }
+  // }
 
   render() {
     return (
@@ -69,7 +69,8 @@ class App extends React.Component {
             selectMovie={this.loadSelectionData}/>}
             />
           }
-          <Route path='/:id' render={ }  />
+          <Route path='/:id' component={ MovieDetailContainer }  
+          />
         </main>
       </div>
     );

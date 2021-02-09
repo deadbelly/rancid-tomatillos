@@ -2,14 +2,13 @@ import React from 'react';
 import './MovieDetail.css';
 
 const MovieDetail = ({movie}) => {
-
   const formatDate = (movieReleaseDate) => {
     const date = new Date(movieReleaseDate);
     return date.toDateString();
   };
 
-  const genres = movie.genres.join(' ');
-
+  const genres = () => movie.genres.join(' ');
+  
   return (
     <section className='movie-detail-page'>
       <div className='backdrop-img' style={{backgroundImage:`url(${movie.backdrop_path})`}}>
