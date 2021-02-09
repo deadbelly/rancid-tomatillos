@@ -1,11 +1,11 @@
 import React from 'react';
-import Header from '../Header/Header'
-import MovieList from '../MovieList/MovieList'
-import MovieDetailContainer from '../MovieDetail/MovieDetailContainer'
-import Loader from './Loader'
-import Error from '../Error/Error'
+import Header from '../Header/Header';
+import MovieList from '../MovieList/MovieList';
+import MovieDetailContainer from '../MovieDetail/MovieDetailContainer';
+import Loader from './Loader';
+import Error from '../Error/Error';
 import './App.css';
-import fetchRequests from '../../fetchRequests'
+import fetchRequests from '../../fetchRequests';
 import { trackPromise } from 'react-promise-tracker';
 import { Route } from 'react-router-dom';
 
@@ -15,7 +15,7 @@ class App extends React.Component {
     this.state = {
       movies: [],
       error: null,
-    };
+    }
   }
 
   componentDidMount() {

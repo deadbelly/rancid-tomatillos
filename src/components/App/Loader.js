@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { usePromiseTracker } from "react-promise-tracker";
 import ClipLoader from "react-spinners/ClipLoader";
 
