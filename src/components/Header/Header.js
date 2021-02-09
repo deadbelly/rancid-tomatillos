@@ -10,7 +10,7 @@ const Header = () => {
         Tomatillos
       </h1>
       <Link to='/'>
-        <button alt='home button'>HOME</button>
+        <button>HOME</button>
       </Link>
     </header>
   );
