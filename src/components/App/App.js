@@ -32,10 +32,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Header
-        selectedDetails={this.state.selectedDetails}
-        clearSelection={this.loadListData}
-        />
+        <Header />
         <main>
           <Loader />
           {!!this.state.movies.length && 
