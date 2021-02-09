@@ -35,6 +35,7 @@ class App extends React.Component {
         <Header />
         <main>
           <Loader />
+          {this.state.error && <Error status={this.state.error.status} text={this.state.error.statusText}/>}
           {!!this.state.movies.length && 
             <Route exact path='/' render={ () => 
               <MovieList movies={this.state.movies} />}
