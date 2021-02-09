@@ -63,11 +63,13 @@ class App extends React.Component {
         />
         <main>
           <Loader />
-          {this.chooseContent()}
-          <Route path="/" component={ () => <MovieList
+          {!!this.state.movies.length && 
+            <Route path='/' render={ () => <MovieList
             movies={this.state.movies}
-            selectMovie={this.loadSelectionData}/> }
-          />
+            selectMovie={this.loadSelectionData}/>}
+            />
+          }
+          <Route path='/:id' render={ }  />
         </main>
       </div>
     );
