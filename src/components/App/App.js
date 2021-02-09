@@ -43,8 +43,7 @@ class App extends React.Component {
               <MovieList movies={this.state.movies} />}
             />
           }
-          <Route path='/:id' component={ MovieDetailContainer }  
-          />
+          <Route path='/:id' component={ MovieDetailContainer } />
         </main>
       </div>
     );
