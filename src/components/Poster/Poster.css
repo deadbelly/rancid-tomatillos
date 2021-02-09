@@ -23,6 +23,7 @@
   width: 15em;
   transition: .6s ease;
   line-height: 0.7em;
+  text-decoration: none;
 }
 
 .long-title {
