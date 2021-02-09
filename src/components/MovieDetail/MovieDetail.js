@@ -2,20 +2,16 @@ import React from 'react';
 import './MovieDetail.css';
 
 const MovieDetail = ({movie}) => {
-
-  const formatDate = (movieReleaseDate) => {
-    const date = new Date(movieReleaseDate);
-    return date.toDateString();
-  };
+  const date = new Date(movie.release_date).toDateString();
 
   const genres = movie.genres.join(' ');
-
+  
   return (
     <section className='movie-detail-page'>
       <div className='backdrop-img' style={{backgroundImage:`url(${movie.backdrop_path})`}}>
         <article className='movie-spec movie-container border' tabIndex='0'>
           <h2 className={movie.title.length >= 20 ? 'long-movie-title' : 'movie-title'}>{movie.title}</h2>
-          <p><b>Release Date:</b> {formatDate(movie.release_date)}</p>
+          <p><b>Release Date:</b> {date}</p>
           <p><b>Genres:</b> {genres}</p>
           <p><b>Runtime:</b> {movie.runtime} minutes</p>
           <p><b>Budget:</b> ${new Intl.NumberFormat().format(movie.budget)}</p>
