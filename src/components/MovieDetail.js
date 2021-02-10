@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../scss/MovieDetail.scss';
+import '../scss/MovieDetail.scss';
 
 const MovieDetail = ({movie}) => {
   const date = new Date(movie.release_date).toDateString();
