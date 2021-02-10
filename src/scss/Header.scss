@@ -1,7 +1,7 @@
 @import 'variables';
 
 header {
-  @include flexElements();
+  @include flexElementRow();
   font-family: $oswald-font;
   height: 9vh;
   text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
