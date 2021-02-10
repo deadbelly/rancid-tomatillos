@@ -1,5 +1,5 @@
 import React from 'react';
-import './MovieList.scss';
+import '../../scss/MovieList.scss';
 import Poster from '../Poster/Poster';
 
 const MovieList = ({movies}) => {
