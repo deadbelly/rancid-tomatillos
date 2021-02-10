@@ -1,0 +1,7 @@
+$oswald-font: 'Oswald', sans-serif;
+
+@mixin flexElements() {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

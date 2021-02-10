@@ -1,5 +1,7 @@
+@import 'variables';
+
 html{
-  font-family: 'Oswald', sans-serif;
+  font-family: $oswald-font;
   background-color: black;
 }
 
