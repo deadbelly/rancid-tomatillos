@@ -1,11 +1,11 @@
 import React from 'react';
-import Header from '../Header/Header';
-import MovieList from '../MovieList/MovieList';
-import MovieDetailContainer from '../MovieDetail/MovieDetailContainer';
+import Header from './Header';
+import MovieList from './MovieList';
+import MovieDetailContainer from './MovieDetailContainer';
 import Loader from './Loader';
-import Error from '../Error/Error';
-import './App.css';
-import fetchRequests from '../../fetchRequests';
+import Error from './Error';
+import '../scss/App.scss';
+import fetchRequests from '../fetchRequests';
 import { trackPromise } from 'react-promise-tracker';
 import { Route } from 'react-router-dom';
 

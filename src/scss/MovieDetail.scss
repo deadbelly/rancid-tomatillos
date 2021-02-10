@@ -1,0 +1,46 @@
+@import 'variables';
+
+.border {
+  border: solid black 0.1em;
+}
+
+.backdrop-img {
+  @include flexElementRow();
+  justify-content: space-around;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+
+}
+
+.movie-container {
+  @include flexElementColumn();
+  width: 50%;
+  height: 50%;
+  justify-content: space-around;
+  border: solid 0.2em #FFFFFF;
+  border-radius: 5%;
+}
+
+.movie-info,
+.movie-spec {
+  @include flexElementColumn();
+  font-family: $oswald-font;
+  background-color: #000000;
+  opacity: 0.8;
+  color: #FFFFFF;
+  margin: 0 2em;
+  font-size: 1.2em;
+}
+
+.movie-title {
+  @include styleMovieTitle();
+  font-size: 3.5em;
+}
+
+.long-movie-title {
+  @include styleMovieTitle();
+  font-size: 2.5em;
+}
