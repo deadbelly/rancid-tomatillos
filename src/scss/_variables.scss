@@ -11,3 +11,8 @@ $oswald-font: 'Oswald', sans-serif;
   flex-direction: column;
   align-items: center;
 }
+
+@mixin styleMovieTitle() {
+  color: #E7ECEF;
+  margin: 0;
+}

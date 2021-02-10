@@ -36,13 +36,11 @@
 }
 
 .movie-title {
-  color: #E7ECEF;
+  @include styleMovieTitle();
   font-size: 3.5em;
-  margin: 0;
 }
 
 .long-movie-title {
-  color: #E7ECEF;
+  @include styleMovieTitle();
   font-size: 2.5em;
-  margin: 0;
 }
