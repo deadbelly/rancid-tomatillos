@@ -40,13 +40,22 @@ describe('MovieDetail', () => {
     cy.get('article').should('have.length', 2);
   });
 
-  // it('Should change urls when you click the home button', () => {
-  //
-  // })
+  it('Should change urls when you click the home button', () => {
+    cy.get('button').click()
+      .get('section').should('have.class', '.poster-grid')
+  })
 });
 
-describe('Errors', () => {
+describe('Error', () => {
   it('Should update the DOM to inform users of a 404', () => {
-    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/fakepath')
-  })
+    cy.visit('http://localhost:3000/0000000')
+    .get('.error-status').should('have.text', '404 - Not Found')
+    .get('.error-expl').should('have.text', 'What you\'re looking for isn\'t here. Double Check the url and try again.');
+  });
+
+  it('Should update the DOM to inform users of a 500 error', () => {
+    cy.visit('http://localhost:3000/fakepath')
+    .get('.error-status').should('have.text', '500 - Internal Server Error')
+    .get('.error-expl').should('have.text', 'Something went wrong on our end. Try reloading the page. If the problem persists try back later.');
+  });
 });
