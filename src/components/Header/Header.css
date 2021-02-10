@@ -21,7 +21,9 @@ h1 {
 
 button {
   cursor: pointer;
-  color: white;
+  color: black;
   border: none;
-  background: none;
+  background: white;
+  border-radius: 5%;
+  font-size: 1em;
 }
