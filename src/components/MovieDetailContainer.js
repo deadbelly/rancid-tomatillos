@@ -1,7 +1,7 @@
 import React from 'react';
 import MovieDetail from './MovieDetail';
-import Error from '../Error/Error';
-import fetchRequests from '../../fetchRequests';
+import Error from './Error';
+import fetchRequests from '../fetchRequests';
 import { trackPromise } from 'react-promise-tracker';;
 
 class MovieDetailContainer extends React.Component {

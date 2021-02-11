@@ -1,9 +1,12 @@
+@import 'variables';
+
 .poster-img {
   border: 5px solid white;
   align-self: center;
   height: auto;
   width: 100%;
 }
+
 .poster-img:hover {
   opacity: 80%;
 }
@@ -18,7 +21,7 @@
   color: white;
   position: relative;
   text-align: center;
-  font-family: 'Oswald', sans-serif;
+  font-family: $oswald-font;
   max-height: 30em;
   width: 15em;
   transition: .6s ease;
