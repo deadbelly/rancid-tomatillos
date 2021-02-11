@@ -3,13 +3,20 @@ describe('App', () => {
     cy.visit('http://localhost:3000');
   })
 
-  it('Should see a header on page load', () => {
+  it('Should see a header and home button on page load', () => {
     cy.get('header h1').should('have.text', 'RancidTomatillos');
     cy.get('header button').should('have.text', 'HOME');
   });
 
-  it('Should see a movie list on page load', () => {
-    cy.get('.poster-grid');
+  it('Should be able to click a movie and direct it to a new URL to see movie details and click on the home button to go back', () => {
+    cy.contains('Mulan')
+      .click()
+      .url()
+      .should('contain', '/337401')
+      .get('button')
+      .click()
+      .url()
+      .should('contain', '/')
   });
 });
 
@@ -47,7 +54,7 @@ describe('MovieDetail', () => {
 });
 
 describe('Error', () => {
-  it('Should update the DOM to inform users of a 404', () => {
+  it.skip('Should update the DOM to inform users of a 404', () => {
     cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/337401', {
       ok: false,
       status: 404,
