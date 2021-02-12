@@ -13,11 +13,15 @@ const changeList = {
     },
 
     release_date(movies) {
-      return movies.sort((a, b) => {
-        const aDate = parseInt(a.release_date.split('-').join(''))
-        const bDate = parseInt(b.release_date.split('-').join(''))
-        console.log(aDate, bDate)
-        return bDate - aDate
+      const convertedDates = movies.map(movie => {
+        if (typeof(movie.release_date) === 'string') {
+          movie.release_date = parseInt(movie.release_date.split('-').join(''))
+        }
+        return movie
+      })
+
+      return convertedDates.sort((a, b) => {
+        return b.release_date - a.release_date
       })
     },
 
