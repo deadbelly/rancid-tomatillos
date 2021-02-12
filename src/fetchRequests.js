@@ -16,7 +16,7 @@ const fetchRequests = {
       .then(response => this.checkResponse(response))
   },
 
-  getVideos() {
+  getVideos(id) {
     return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2//movies/${id}/videos`)
       .then(response => this.checkResponse(response))
   }

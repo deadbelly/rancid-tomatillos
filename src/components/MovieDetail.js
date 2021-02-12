@@ -1,7 +1,9 @@
 import React from 'react';
 import '../scss/MovieDetail.scss';
+import YouTube from 'react-youtube';
 
-const MovieDetail = ({movie}) => {
+const MovieDetail = ({movie, videos}) => {
+  console.log(videos)
   const date = new Date(movie.release_date).toDateString();
 
   const genres = movie.genres.join(' ');
@@ -21,6 +23,9 @@ const MovieDetail = ({movie}) => {
           <h3>{movie.tagline}</h3>
           <p className='overview'>{movie.overview}</p>
           <p><b>Freshness:</b> {movie.average_rating.toFixed(2)*10}%</p>
+          <div>
+            {videos.length && <YouTube videoId={videos[0].key} /> } 
+          </div>
         </article>
       </div>
     </section>
