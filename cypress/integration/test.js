@@ -93,8 +93,7 @@ describe('MovieDetail', () => {
   });
 
   it('Should have a tagline', () => {
-    //COME BACK TO ME
-    // cy.get('h3').should('contain', 'Revenue:')
+    cy.get('h3').should('contain', 'It\'s a movie!')
   });
 
   it('Should have an overview', () => {
