@@ -16,6 +16,7 @@ class App extends React.Component {
       movies: [],
       error: null,
       searchQuery: '',
+      sort: 'freshness'
     }
   }
 
@@ -27,24 +28,30 @@ class App extends React.Component {
   }
 
   updateQuery = (searchBarValue) => {
-    this.setState({ searchQuery: searchBarValue })
+    this.setState({searchQuery: searchBarValue})
+  }
+
+  updateSort = (sortValue) => {
+    this.setState({sort: sortValue})
   }
 
   render() {
     return (
       <div className="App">
-        <Header 
-          searchQuery={this.state.searchQuery} 
+        <Header
+          searchQuery={this.state.searchQuery}
           updateQuery={this.updateQuery}
+          sort={this.state.sort}
+          updateSort={this.updateSort}
         />
         <main>
           <Loader />
           {this.state.error && <Error status={this.state.error.status} text={this.state.error.statusText}/>}
           {!!this.state.movies.length &&
             <Route exact path='/' render={ () =>
-              <MovieList 
-                movies={this.state.movies} 
-                searchQuery={this.state.searchQuery}  
+              <MovieList
+                movies={this.state.movies}
+                searchQuery={this.state.searchQuery}
               />}
             />
           }

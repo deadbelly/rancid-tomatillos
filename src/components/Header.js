@@ -2,7 +2,7 @@ import React from 'react';
 import '../scss/Header.scss';
 import { Link } from 'react-router-dom';
 
-const Header = ({searchQuery, updateQuery, sort}) => {
+const Header = ({searchQuery, updateQuery, sort, updateSort}) => {
   return (
     <header>
       <h1>Rancid
@@ -17,7 +17,7 @@ const Header = ({searchQuery, updateQuery, sort}) => {
         onChange={ event => updateQuery(event.target.value) }
       />
       <label>Sort movies by...</label>
-      <select value={sort}>
+      <select value={sort} onChange={event => updateSort(event.target.value)}>
         <option value='freshness'>Freshness</option>
         <option value='date'>Date</option>
         <option value='name'>Name</option>
