@@ -3,9 +3,10 @@ import '../scss/MovieList.scss';
 import Poster from './Poster';
 import changeList from '../changeList'
 
-const MovieList = ({movies, searchQuery}) => {
+const MovieList = ({movies, searchQuery, sort}) => {
 
   movies = changeList.filterMovies(movies, searchQuery)
+  movies = changeList.sortBy[sort](movies)
 
   return (
     <div className='poster-grid'>
