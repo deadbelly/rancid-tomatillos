@@ -11,16 +11,16 @@ const Header = ({searchQuery, updateQuery, sort, updateSort}) => {
       </h1>
       <input
         type='text'
-        placeholder='Search Movies By Name'
-        aria-label='Search Movies By Name'
+        placeholder='Search Movies By Title'
+        aria-label='Search Movies By Title'
         value={searchQuery}
         onChange={ event => updateQuery(event.target.value) }
       />
       <label>Sort movies by...</label>
       <select value={sort} onChange={event => updateSort(event.target.value)}>
-        <option value='freshness'>Freshness</option>
-        <option value='date'>Date</option>
-        <option value='name'>Name</option>
+        <option value='average_rating'>Freshness</option>
+        <option value='release_date'>Date</option>
+        <option value='title'>Title</option>
       </select>
       <Link to='/'>
         <button>HOME</button>

@@ -16,7 +16,7 @@ class App extends React.Component {
       movies: [],
       error: null,
       searchQuery: '',
-      sort: 'freshness'
+      sort: 'average_rating'
     }
   }
 
@@ -52,6 +52,7 @@ class App extends React.Component {
               <MovieList
                 movies={this.state.movies}
                 searchQuery={this.state.searchQuery}
+                sort={this.state.sort}
               />}
             />
           }
