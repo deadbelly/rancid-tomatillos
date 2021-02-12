@@ -1,5 +1,6 @@
 describe('App', () => {
   beforeEach(() => {
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {fixture: 'movieListData'});
     cy.visit('http://localhost:3000');
   })
 
@@ -9,7 +10,7 @@ describe('App', () => {
   });
 
   it('Should be able to click a movie and direct it to a new URL to see movie details and click on the home button to go back', () => {
-    cy.contains('Mulan')
+    cy.contains('Test 2')
       .click()
       .url()
       .should('contain', '/337401')
@@ -22,11 +23,12 @@ describe('App', () => {
 
 describe('MovieList', () => {
   beforeEach(() => {
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {fixture: 'movieListData'});
     cy.visit('http://localhost:3000');
   });
 
   it('Should show 40 movie posters', () => {
-    cy.get('.poster').should('have.length', 40);
+    cy.get('.poster').should('have.length', 3);
   });
 
   it('Should have an image for each poster', () => {
@@ -50,6 +52,7 @@ describe('MovieList', () => {
 
 describe('MovieDetail', () => {
   beforeEach(() => {
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/337401', {fixture: 'movieDetailData'});
     cy.visit('http://localhost:3000/337401');
   });
 
@@ -66,7 +69,7 @@ describe('MovieDetail', () => {
   });
 
   it('Should have a title', () => {
-    cy.get('h2').should('contain', 'Mulan');
+    cy.get('h2').should('contain', 'Test 2');
   });
 
   it('Should have a release date', () => {
