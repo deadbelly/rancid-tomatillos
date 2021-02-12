@@ -42,7 +42,10 @@ class App extends React.Component {
           {this.state.error && <Error status={this.state.error.status} text={this.state.error.statusText}/>}
           {!!this.state.movies.length &&
             <Route exact path='/' render={ () =>
-              <MovieList movies={this.state.movies} />}
+              <MovieList 
+                movies={this.state.movies} 
+                searchQuery={this.state.searchQuery}  
+              />}
             />
           }
           <Route path='/:id' component={ MovieDetailContainer } />
