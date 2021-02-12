@@ -7,7 +7,7 @@ const changeList = {
     })
   },
 
-  sortAlgorithm: {
+  sortBy: {
     average_rating(movies) {
       return movies.sort((a, b) => b.average_rating - a.average_rating)
     },
@@ -30,10 +30,6 @@ const changeList = {
         return a.title.localeCompare(b.title, {sensitivity: 'base'});
       })
     }
-  },
-
-  sortMovies(movies, sort) {
-    return this.sortAlgorithm[sort](movies)
   }
 }
 

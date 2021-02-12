@@ -6,7 +6,7 @@ import changeList from '../changeList'
 const MovieList = ({movies, searchQuery, sort}) => {
 
   movies = changeList.filterMovies(movies, searchQuery)
-  movies = changeList.sortMovies(movies, sort)
+  movies = changeList.sortBy[sort](movies)
 
   return (
     <div className='poster-grid'>
