@@ -9,6 +9,7 @@ const Header = () => {
         <img className='icon' src='./tomatillo.png' alt='green tomato icon'/>
         Tomatillos
       </h1>
+      <input type='text' placeholder='Search Movies By Name' aria-label='Search Movies By Name'/>
       <Link to='/'>
         <button>HOME</button>
       </Link>
