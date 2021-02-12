@@ -15,6 +15,7 @@ class App extends React.Component {
     this.state = {
       movies: [],
       error: null,
+      searchQuery: '',
     }
   }
 
@@ -25,16 +26,26 @@ class App extends React.Component {
     )
   }
 
+  updateQuery = (searchBarValue) => {
+    this.setState({ searchQuery: searchBarValue })
+  }
+
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header 
+          searchQuery={this.state.searchQuery} 
+          updateQuery={this.updateQuery}
+        />
         <main>
           <Loader />
           {this.state.error && <Error status={this.state.error.status} text={this.state.error.statusText}/>}
           {!!this.state.movies.length &&
             <Route exact path='/' render={ () =>
-              <MovieList movies={this.state.movies} />}
+              <MovieList 
+                movies={this.state.movies} 
+                searchQuery={this.state.searchQuery}  
+              />}
             />
           }
           <Route path='/:id' component={ MovieDetailContainer } />

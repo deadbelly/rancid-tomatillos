@@ -1,6 +1,7 @@
 {
   "movie": {
-    id: 1, title: "Test 2",
+    id: 1, 
+    title: "Test 2",
     poster_path: "https://image.tmdb.org/t/p/original//7G2VvG1lU8q758uOqU6z2Ds0qpA.jpg",
     backdrop_path: "https://image.tmdb.org/t/p/original//oazPqs1z78LcIOFslbKtJLGlueo.jpg",
     release_date: "2019-12-04",
