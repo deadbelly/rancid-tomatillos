@@ -26,7 +26,9 @@ const changeList = {
     },
 
     title(movies) {
-      return movies.sort((a, b) => b.title - a.title)
+      return movies.sort((a, b) => {
+        return a.title.localeCompare(b.title, {sensitivity: 'base'});
+      })
     }
   },
 
