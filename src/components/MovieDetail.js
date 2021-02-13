@@ -7,7 +7,7 @@ const MovieDetail = ({movie, videos}) => {
   const date = new Date(movie.release_date).toDateString();
 
   const genres = movie.genres.join(' ');
-  
+
   return (
     <section className='movie-detail-page'>
       <div className='backdrop-img' style={{backgroundImage:`url(${movie.backdrop_path})`}}>
@@ -24,7 +24,8 @@ const MovieDetail = ({movie, videos}) => {
           <p className='overview'>{movie.overview}</p>
           <p><b>Freshness:</b> {movie.average_rating.toFixed(2)*10}%</p>
           <div>
-            {videos.length && <YouTube videoId={videos[0].key} /> } 
+            {videos.length &&
+              videos.map(video => <YouTube videoId={video.key} /> )}
           </div>
         </article>
       </div>
