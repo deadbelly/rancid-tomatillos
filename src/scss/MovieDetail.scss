@@ -12,7 +12,7 @@
 
 .long-movie-title {
   @include styleMovieTitle();
-  font-size: 2.5em;
+  font-size: 2em;
 }
 
 .movie-container {
@@ -32,7 +32,7 @@
 
 .movie-title {
   @include styleMovieTitle();
-  font-size: 3.5em;
+  font-size: 3em;
 }
 
 .trailer-container {
