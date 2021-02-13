@@ -38,5 +38,5 @@
 .trailer-container {
   @include flexElementColumn();
   @include widgetStyle();
-  overflow: scroll;
+  overflow-y: scroll;
 }
