@@ -28,6 +28,7 @@
 .movie-spec {
   @include flexElementColumn();
   @include widgetStyle();
+  opacity: 0.8;
 }
 
 .movie-title {
