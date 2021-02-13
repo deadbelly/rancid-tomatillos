@@ -1,0 +1,27 @@
+@media only screen and (max-width: 1225px){
+  .poster-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 945px){
+  .poster-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 675px){
+  header {
+    
+  }
+
+  .poster-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 445px){
+  .poster-grid {
+    grid-template-columns: 1fr;
+  }
+}
