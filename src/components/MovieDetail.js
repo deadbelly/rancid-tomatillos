@@ -7,6 +7,11 @@ const MovieDetail = ({movie, videos}) => {
 
   const genres = movie.genres.join(' ');
 
+  const opts = {
+    height: '350',
+    width: '390',
+  }
+
   return (
     <section>
       <div className='backdrop-img' style={{backgroundImage:`url(${movie.backdrop_path})`}}>
@@ -25,7 +30,7 @@ const MovieDetail = ({movie, videos}) => {
         </article>
         <article className='trailer-container movie-container' tabIndex='0'>
           {videos.length &&
-            videos.map(video => <YouTube videoId={video.key} /> )}
+            videos.map(video => <YouTube videoId={video.key} opts={opts}/> )}
         </article>
       </div>
     </section>
