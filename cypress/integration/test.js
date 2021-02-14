@@ -57,15 +57,15 @@ describe('MovieDetail', () => {
   });
 
   it('Should see a movie detail section', () => {
-    cy.get('section').should('have.class', 'movie-detail-page');
+    cy.get('article').should('have.class', 'movie-container');
   });
 
   it('Should have two info articles', () => {
-    cy.get('article').should('have.length', 2);
+    cy.get('article').should('have.length', 3);
   });
 
   it('Should have a backrop image', () => {
-    cy.get('.movie-detail-page div').should('have.class', 'backdrop-img');
+    cy.get('div').should('have.class', 'backdrop-img');
   });
 
   it('Should have a title', () => {
