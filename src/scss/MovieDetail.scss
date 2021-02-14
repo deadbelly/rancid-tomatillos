@@ -1,9 +1,5 @@
 @import 'variables';
 
-.border {
-  border: solid black 0.1em;
-}
-
 .backdrop-img {
   @include flexElementRow();
   justify-content: space-around;
@@ -12,7 +8,11 @@
   background-repeat: no-repeat;
   height: 100vh;
   width: 100vw;
+}
 
+.long-movie-title {
+  @include styleMovieTitle();
+  font-size: 2em;
 }
 
 .movie-container {
@@ -27,20 +27,17 @@
 .movie-info,
 .movie-spec {
   @include flexElementColumn();
-  font-family: $oswald-font;
-  background-color: #000000;
+  @include widgetStyle();
   opacity: 0.8;
-  color: #FFFFFF;
-  margin: 0 2em;
-  font-size: 1.2em;
 }
 
 .movie-title {
   @include styleMovieTitle();
-  font-size: 3.5em;
+  font-size: 3em;
 }
 
-.long-movie-title {
-  @include styleMovieTitle();
-  font-size: 2.5em;
+.trailer-container {
+  @include flexElementColumn();
+  @include widgetStyle();
+  overflow-y: scroll;
 }

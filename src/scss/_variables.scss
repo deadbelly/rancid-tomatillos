@@ -16,3 +16,11 @@ $oswald-font: 'Oswald', sans-serif;
   color: #E7ECEF;
   margin: 0;
 }
+
+@mixin widgetStyle() {
+  font-family: $oswald-font;
+  background-color: #000000;
+  color: #FFFFFF;
+  margin: 0 2em;
+  font-size: 1.05em;
+}
