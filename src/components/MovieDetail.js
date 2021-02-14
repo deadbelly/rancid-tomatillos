@@ -1,5 +1,4 @@
 import React from 'react';
-import '../scss/MovieDetail.scss';
 import YouTube from 'react-youtube';
 
 const MovieDetail = ({movie, videos}) => {

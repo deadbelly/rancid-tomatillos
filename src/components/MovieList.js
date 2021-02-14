@@ -1,5 +1,4 @@
 import React from 'react';
-import '../scss/MovieList.scss';
 import Poster from './Poster';
 import changeList from '../changeList'
 
