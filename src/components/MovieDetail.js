@@ -29,6 +29,7 @@ const MovieDetail = ({movie, videos}) => {
           <p><b>Freshness:</b> {movie.average_rating.toFixed(2)*10}%</p>
         </article>
         <article className='trailer-container movie-container' tabIndex='0'>
+          <h2>Trailers & Clips</h2>
           {videos.length &&
             videos.map(video => <YouTube videoId={video.key} opts={opts}/> )}
         </article>
