@@ -10,7 +10,7 @@
   }
 }
 
-@media only screen and (max-width: 675px){
+@media only screen and (max-width: 768px){
   header {
     display: flex;
     flex-direction: column;
@@ -23,16 +23,18 @@
   }
 
   .poster-grid {
-    width: 100%;
-  }
-
-  .poster-img {
-    width: 200px;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 @media only screen and (max-width: 445px){
   .poster-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .poster {
+    width: 100%;
+    max-height: 50em;
   }
 }
