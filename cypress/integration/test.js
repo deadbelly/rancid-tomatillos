@@ -4,12 +4,18 @@ describe('App', () => {
     cy.visit('http://localhost:3000');
   })
 
-  it('Should see a header and home button on page load', () => {
+  it('Should see a header, form and home button on page load', () => {
     cy.get('header h1').should('have.text', 'RancidTomatillos');
     cy.get('header button').should('have.text', 'HOME');
+    cy.get('form').and('be.visible');
   });
 
-  it.only('Should be able to test user integration', () => {
+  it('Should have a drop down menu and be able to select each options', () => {
+    cy.get('select').select('Date');
+    cy.get('select').select('Freshness');
+  });
+
+  it('Should be able to test user integration', () => {
     cy.contains('Test 2')
       .click()
       .url()
@@ -18,6 +24,8 @@ describe('App', () => {
       .click()
       .url()
       .should('contain', '/')
+      .get('select')
+      .select('Title')
       .get('input')
       .type('Test 2')
   });
