@@ -113,6 +113,10 @@ describe('MovieDetail', () => {
   it('Should have a rating', () => {
     cy.get('p').should('contain', 'Freshness:');
   });
+
+  it('Should contain trailers and/or clips', () => {
+    cy.get('article').should('have.class', 'trailer-container')
+  })
 });
 
 describe('Error', () => {
