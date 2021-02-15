@@ -9,7 +9,7 @@ describe('App', () => {
     cy.get('header button').should('have.text', 'HOME');
   });
 
-  it('Should be able to click a movie and direct it to a new URL to see movie details and click on the home button to go back', () => {
+  it.only('Should be able to test user integration', () => {
     cy.contains('Test 2')
       .click()
       .url()
@@ -18,6 +18,8 @@ describe('App', () => {
       .click()
       .url()
       .should('contain', '/')
+      .get('input')
+      .type('Test 2')
   });
 });
 
