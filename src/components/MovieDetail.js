@@ -15,7 +15,7 @@ const MovieDetail = ({movie, videos}) => {
     <section>
       <article className='movie-spec movie-container' tabIndex='0'>
         <h2 className={movie.title.length >= 20 ? 'long-movie-title' : 'movie-title'}>{movie.title}</h2>
-        <img className='backdrop-img' src={movie.backdrop_path} />
+        <img className='backdrop-img' src={movie.backdrop_path} alt={`${movie.title} promo image`}/>
         <h3>{movie.tagline}</h3>
         <p className='overview'>{movie.overview}</p>
       </article>
