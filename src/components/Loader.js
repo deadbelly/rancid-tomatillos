@@ -8,7 +8,7 @@ const Loader = () => {
     <div>
       <ClipLoader loading={usePromiseTracker().promiseInProgress} color={'#BFDF8E'} size={'40vh'} />
     </div>
-  )
+  );
 }
 
-export default Loader
+export default Loader;

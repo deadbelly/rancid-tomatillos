@@ -10,7 +10,7 @@ const Poster = ({id, title, rating, imgSrc}) => {
         <h2 className={title.length > 25 ? 'long-title' : ''}>{title}</h2>
       </div>
     </Link>
-  )
+  );
 }
 
 export default Poster;

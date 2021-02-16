@@ -36,7 +36,7 @@ const MovieDetail = ({movie, videos}) => {
         </div>
       </article>
     </section>
-  )
+  );
 }
 
 export default MovieDetail;
