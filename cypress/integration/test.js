@@ -119,7 +119,7 @@ describe('MovieDetail', () => {
     cy.get('p').should('contain', 'Freshness:');
   });
 
-  it.only('Should contain trailers and/or clips', () => {
+  it('Should contain trailers and/or clips', () => {
     cy.get('article').should('have.class', 'trailer-container');
     cy.get('iframe').should('have.length', 1);
   })
@@ -142,5 +142,13 @@ describe('Error', () => {
     cy.visit('http://localhost:3000/337401')
     .get('.error-status').should('have.text', '500 - Internal Server Error')
     .get('.error-expl').should('have.text', 'Something went wrong on our end. Try reloading the page. If the problem persists try back later.');
+  });
+});
+
+describe.only('Loader', () => {
+  it('Should render loading screen while promise is ongoing', () => {
+    cy.intercept({method: 'GET', delay: 5000, url: 'https://rancid-tomatillos.herokuapp.com/api/v2/movies'});
+    cy.visit('http://localhost:3000');
+    cy.get('span').should('be.visible');
   });
 });
