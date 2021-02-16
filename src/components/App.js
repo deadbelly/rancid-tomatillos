@@ -4,7 +4,6 @@ import MovieList from './MovieList';
 import MovieDetailContainer from './MovieDetailContainer';
 import Loader from './Loader';
 import Error from './Error';
-import '../scss/App.scss';
 import fetchRequests from '../fetchRequests';
 import { trackPromise } from 'react-promise-tracker';
 import { Route } from 'react-router-dom';
@@ -24,15 +23,15 @@ class App extends React.Component {
     trackPromise(fetchRequests.getAllMovies()
       .then(data => this.setState({movies: data.movies, selectedDetails: null}))
       .catch(error => this.setState({error: error}))
-    )
+    );
   }
 
   updateQuery = (searchBarValue) => {
-    this.setState({searchQuery: searchBarValue})
+    this.setState({searchQuery: searchBarValue});
   }
 
   updateSort = (sortValue) => {
-    this.setState({sort: sortValue})
+    this.setState({sort: sortValue});
   }
 
   render() {

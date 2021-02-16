@@ -1,14 +1,14 @@
 $oswald-font: 'Oswald', sans-serif;
 
-@mixin flexElementRow() {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
 @mixin flexElementColumn() {
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+@mixin flexElementRow() {
+  display: flex;
+  flex-direction: row;
   align-items: center;
 }
 

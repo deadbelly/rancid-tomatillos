@@ -23,7 +23,7 @@ class MovieDetailContainer extends React.Component {
         this.setState({videos: data[1].videos})
        })
        .catch(error => this.setState({error: error}))
-    )
+    );
   }
 
   render() {
@@ -32,8 +32,8 @@ class MovieDetailContainer extends React.Component {
       {this.state.error && <Error status={this.state.error.status} text={this.state.error.statusText}/>}
       {this.state.selectedDetails && <MovieDetail movie={this.state.selectedDetails} videos={this.state.videos}/>}
     </>
-    )
+    );
   }
 }
  
-export default MovieDetailContainer
+export default MovieDetailContainer;

@@ -1,5 +1,22 @@
 @import 'variables';
 
+button {
+  cursor: pointer;
+  color: black;
+  border: solid 1px #3A432B;
+  background: white;
+  border-radius: 5%;
+  font-size: 1em;
+}
+
+form {
+  width: 60%;
+}
+
+h1 {
+  font-size: 3em;
+}
+
 header {
   @include flexElementRow();
   font-family: $oswald-font;
@@ -9,28 +26,12 @@ header {
   background-color: #BFDF8E;
 }
 
-h1 {
-  font-size: 3em;
-}
-
 .icon {
   width: 4%;
   height: auto;
-}
-
-form {
-  width: 60%;
 }
 
 label {
   font-size: 1.3em;
 }
 
-button {
-  cursor: pointer;
-  color: black;
-  border: solid 1px #3A432B;
-  background: white;
-  border-radius: 5%;
-  font-size: 1em;
-}
