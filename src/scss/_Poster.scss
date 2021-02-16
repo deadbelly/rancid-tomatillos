@@ -15,11 +15,14 @@
   transition: .6s ease;
   line-height: 0.7em;
   text-decoration: none;
-  &:hover, 
+  &:hover,
   &:focus {
     cursor: pointer;
     transform: scale(1.1, 1.1);
     color: #8E96DF;
+    .poster-img {
+      opacity: 0.80;
+    }
   }
 }
 
@@ -28,8 +31,4 @@
   align-self: center;
   height: auto;
   width: 100%;
-}
-
-.poster-img:hover {
-  opacity: 80%;
 }
