@@ -15,7 +15,7 @@ describe('App', () => {
     cy.get('select').select('Freshness');
   });
 
-  it.only('Should be able to test user integration', () => {
+  it('Should be able to test user integration', () => {
     cy.contains('Test 2')
       .click()
       .url()
@@ -65,6 +65,9 @@ describe('MovieList', () => {
 describe('MovieDetail', () => {
   beforeEach(() => {
     cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/337401', {fixture: 'movieDetailData'});
+
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/337401/videos', {fixture: 'movieVideoData'});
+
     cy.visit('http://localhost:3000/337401');
   });
 
