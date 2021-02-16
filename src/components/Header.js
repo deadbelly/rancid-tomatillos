@@ -20,12 +20,13 @@ const Header = ({searchQuery, updateQuery, sort, updateSort}) => {
           onChange={ event => updateQuery(event.target.value) }
         />
         <div className='sort'>
-          <label htmlFor='sort-options'>Sort movies by </label>
-          <select name='sort-options' value={sort} onChange={event => updateSort(event.target.value)} label='drop down menu'>
-            <option value='average_rating'>Freshness</option>
-            <option value='release_date'>Date</option>
-            <option value='title'>Title</option>
-          </select>
+          <label htmlFor='sort-options'>Sort movies by 
+            <select name='sort-options' value={sort} onChange={event => updateSort(event.target.value)}>
+              <option value='average_rating'>Freshness</option>
+              <option value='release_date'>Date</option>
+              <option value='title'>Title</option>
+            </select>
+          </label>
         </div>
       </form>
     </header>
