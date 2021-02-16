@@ -26,7 +26,6 @@
   section {
     @include flexElementColumn();
     overflow-y: scroll;
-    height: 65em;
   }
 
   .poster-grid {
