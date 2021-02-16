@@ -1,0 +1,46 @@
+@import 'variables';
+
+@media only screen and (max-width: 1225px){
+  .poster-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 945px){
+  .poster-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 768px){
+  header {
+    @include flexElementColumn();
+    height: 8em;
+    line-height: 1em;
+    & h1 {
+      margin-top: 0.1em;
+      margin-bottom: 0.1em;
+    }
+  }
+
+  section {
+    @include flexElementColumn();
+    overflow-y: scroll;
+    height: 80vh;
+  }
+
+  .poster-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 445px){
+  .poster-grid {
+    @include flexElementColumn();
+  }
+
+  .poster {
+    width: 100%;
+    max-height: 50em;
+  }
+}

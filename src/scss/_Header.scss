@@ -1,0 +1,37 @@
+@import 'variables';
+
+button {
+  cursor: pointer;
+  color: black;
+  border: solid 1px #3A432B;
+  background: white;
+  border-radius: 5%;
+  font-size: 1em;
+}
+
+form {
+  width: 60%;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+header {
+  @include flexElementRow();
+  font-family: $oswald-font;
+  height: 9vh;
+  text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+  justify-content: center;
+  background-color: #BFDF8E;
+}
+
+.icon {
+  width: 4%;
+  height: auto;
+}
+
+label {
+  font-size: 1.3em;
+}
+
