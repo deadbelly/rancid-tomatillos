@@ -119,8 +119,9 @@ describe('MovieDetail', () => {
     cy.get('p').should('contain', 'Freshness:');
   });
 
-  it('Should contain trailers and/or clips', () => {
-    cy.get('article').should('have.class', 'trailer-container')
+  it.only('Should contain trailers and/or clips', () => {
+    cy.get('article').should('have.class', 'trailer-container');
+    cy.get('iframe').should('have.length', 1);
   })
 });
 
