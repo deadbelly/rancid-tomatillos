@@ -32,7 +32,7 @@ const MovieDetail = ({movie, videos}) => {
         <h2>Trailers & Clips</h2>
         <div className='trailer-container movie-container' tabIndex='0'>
           {videos.length &&
-            videos.map(video => <YouTube videoId={video.key} opts={opts}/> )}
+            videos.map(video => <YouTube videoId={video.key} opts={opts} key={video.id}/> )}
         </div>
       </article>
     </section>
