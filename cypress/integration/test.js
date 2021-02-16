@@ -15,7 +15,7 @@ describe('App', () => {
     cy.get('select').select('Freshness');
   });
 
-  it('Should be able to test user integration', () => {
+  it.only('Should be able to test user integration', () => {
     cy.contains('Test 2')
       .click()
       .url()
@@ -28,6 +28,8 @@ describe('App', () => {
       .select('Title')
       .get('input')
       .type('Test 2')
+      .get('.poster')
+      .should('have.length', 1)
   });
 });
 
