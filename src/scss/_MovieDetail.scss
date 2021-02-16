@@ -3,6 +3,7 @@
 section {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  height: 100em;
 }
 
 .backdrop-img {
@@ -24,7 +25,6 @@ section {
 .movie-container {
   @include flexElementColumn();
   @include widgetStyle();
-  height: 100vh;
 }
 
 .movie-title {
