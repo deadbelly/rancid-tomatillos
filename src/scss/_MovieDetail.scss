@@ -1,19 +1,7 @@
 @import 'variables';
 
-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  height: 100em;
-}
-
 .backdrop-img {
   height: auto;
-  width: 80%;
-}
-
-.movie-stats {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   width: 80%;
 }
 
@@ -27,9 +15,25 @@ section {
   @include widgetStyle();
 }
 
+.movie-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 80%;
+}
+
 .movie-title {
   @include styleMovieTitle();
   font-size: 3em;
+}
+
+.overview {
+  width: 80%;
+}
+
+section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100em;
 }
 
 .trailer-container {
@@ -39,8 +43,4 @@ section {
   justify-content: space-around;
   height: 25em;
   overflow-y: scroll;
-}
-
-.overview {
-  width: 80%;
 }

@@ -1,17 +1,3 @@
-@import 'variables';
-@import 'Error';
-@import 'Header';
-@import 'MovieDetail';
-@import 'MovieList';
-@import 'Poster';
-@import 'media-queries';
-
-
-html{
-  font-family: $oswald-font;
-  background-color: black;
-}
-
 .App {
   text-align: center;
 }
@@ -32,3 +18,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+html{
+  font-family: $oswald-font;
+  background-color: black;
+}
+

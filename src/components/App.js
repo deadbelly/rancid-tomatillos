@@ -4,7 +4,6 @@ import MovieList from './MovieList';
 import MovieDetailContainer from './MovieDetailContainer';
 import Loader from './Loader';
 import Error from './Error';
-import '../scss/App.scss';
 import fetchRequests from '../fetchRequests';
 import { trackPromise } from 'react-promise-tracker';
 import { Route } from 'react-router-dom';

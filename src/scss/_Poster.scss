@@ -1,20 +1,8 @@
 @import 'variables';
 
-.poster-img {
-  border: 5px solid white;
-  align-self: center;
-  height: auto;
-  width: 100%;
-}
-
-.poster-img:hover {
-  opacity: 80%;
-}
-
-.poster:hover, .poster:focus {
-  cursor: pointer;
-  transform: scale(1.1, 1.1);
-  color: #8E96DF;
+.long-title {
+  font-size: 1.4em;
+  line-height: 1em;
 }
 
 .poster {
@@ -27,9 +15,21 @@
   transition: .6s ease;
   line-height: 0.7em;
   text-decoration: none;
+  &:hover, 
+  &:focus {
+    cursor: pointer;
+    transform: scale(1.1, 1.1);
+    color: #8E96DF;
+  }
 }
 
-.long-title {
-  font-size: 1.4em;
-  line-height: 1em;
+.poster-img {
+  border: 5px solid white;
+  align-self: center;
+  height: auto;
+  width: 100%;
+}
+
+.poster-img:hover {
+  opacity: 80%;
 }
