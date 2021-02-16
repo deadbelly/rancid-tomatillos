@@ -39,7 +39,7 @@ describe('MovieList', () => {
     cy.visit('http://localhost:3000');
   });
 
-  it('Should show 40 movie posters', () => {
+  it('Should show 3 movie posters', () => {
     cy.get('.poster').should('have.length', 3);
   });
 
@@ -76,11 +76,11 @@ describe('MovieDetail', () => {
   });
 
   it('Should have two info articles', () => {
-    cy.get('article').should('have.length', 3);
+    cy.get('article').should('have.length', 2);
   });
 
   it('Should have a backrop image', () => {
-    cy.get('div').should('have.class', 'backdrop-img');
+    cy.get('img').should('have.class', 'backdrop-img');
   });
 
   it('Should have a title', () => {
@@ -120,7 +120,7 @@ describe('MovieDetail', () => {
   });
 
   it('Should contain trailers and/or clips', () => {
-    cy.get('article').should('have.class', 'trailer-container');
+    cy.get('div').should('have.class', 'trailer-container');
     cy.get('iframe').should('have.length', 1);
   })
 });
