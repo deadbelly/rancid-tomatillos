@@ -29,7 +29,7 @@ describe('App', () => {
       .get('input')
       .type('Test 2')
       .get('.poster')
-      .should('have.length', 1)
+      .should('have.length', 1);
   });
 });
 
@@ -45,19 +45,19 @@ describe('MovieList', () => {
 
   it('Should have an image for each poster', () => {
     cy.get('.poster').each(poster => {
-      cy.get(poster).get('img').should('have.class', 'poster-img')
+      cy.get(poster).get('img').should('have.class', 'poster-img');
     });
   });
 
   it('Should have a rating for each poster', () => {
     cy.get('.poster').each(poster => {
-      cy.get(poster).get('p').should('contain', 'Freshness:')
+      cy.get(poster).get('p').should('contain', 'Freshness:');
     });
   });
 
   it('Should have an image for each poster', () => {
     cy.get('.poster').each(poster => {
-      cy.get(poster).get('h2').should('be.visible')
+      cy.get(poster).get('h2').should('be.visible');
     });
   });
 });
@@ -108,7 +108,7 @@ describe('MovieDetail', () => {
   });
 
   it('Should have a tagline', () => {
-    cy.get('h3').should('contain', 'It\'s a movie!')
+    cy.get('h3').should('contain', 'It\'s a movie!');
   });
 
   it('Should have an overview', () => {
@@ -122,7 +122,7 @@ describe('MovieDetail', () => {
   it('Should contain trailers and/or clips', () => {
     cy.get('div').should('have.class', 'trailer-container');
     cy.get('iframe').should('have.length', 1);
-  })
+  });
 });
 
 describe('Error', () => {
