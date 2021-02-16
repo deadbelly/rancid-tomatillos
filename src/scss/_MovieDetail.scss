@@ -3,7 +3,7 @@
 section {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 100%;
+  height: 10em;
 }
 
 .backdrop-img {
@@ -25,7 +25,6 @@ section {
 .movie-container {
   @include flexElementColumn();
   @include widgetStyle();
-  width: 100%;
 }
 
 .movie-title {
@@ -34,10 +33,11 @@ section {
 }
 
 .trailer-container {
-  @include flexElementColumn();
+  display: grid;
+  grid-template-columns: 1fr;
   @include widgetStyle();
   justify-content: space-around;
-  height: 40%;
+  height: 25em;
   overflow-y: scroll;
 }
 
