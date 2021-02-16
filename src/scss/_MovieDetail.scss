@@ -1,13 +1,20 @@
 @import 'variables';
 
+section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
+}
+
 .backdrop-img {
-  @include flexElementRow();
-  justify-content: space-around;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
-  width: 100vw;
+  height: auto;
+  width: 80%;
+}
+
+.movie-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 80%;
 }
 
 .long-movie-title {
@@ -17,18 +24,8 @@
 
 .movie-container {
   @include flexElementColumn();
-  width: 50%;
-  height: 50%;
-  justify-content: space-around;
-  border: solid 0.2em #FFFFFF;
-  border-radius: 5%;
-}
-
-.movie-info,
-.movie-spec {
-  @include flexElementColumn();
   @include widgetStyle();
-  opacity: 0.8;
+  width: 100%;
 }
 
 .movie-title {
@@ -39,5 +36,11 @@
 .trailer-container {
   @include flexElementColumn();
   @include widgetStyle();
+  justify-content: space-around;
+  height: 40%;
   overflow-y: scroll;
+}
+
+.overview {
+  width: 80%;
 }
