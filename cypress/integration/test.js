@@ -145,7 +145,7 @@ describe('Error', () => {
   });
 });
 
-describe.only('Loader', () => {
+describe('Loader', () => {
   it('Should render loading screen while promise is ongoing', () => {
     cy.intercept({method: 'GET', delay: 5000, url: 'https://rancid-tomatillos.herokuapp.com/api/v2/movies'});
     cy.visit('http://localhost:3000');
