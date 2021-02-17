@@ -1,5 +1,5 @@
 # Rancid Tomatillos
-Rancid Tomatillos is a site that lets users browse movies, and view fun details about each one like their budget, a plot summary, and user community ratings. It's designed for a fluid and accessible experience for users of varying levels of ability and internet literacy. It's currently deployed [here](https://rancid-tomatillos.vercel.app/), but we would like to note that there is a [small visual bug](https://github.com/thaomonster/rancid-tomatillos/issues/37) in the deployed version, and for now running the site on a local machine is a better experience. 
+Rancid Tomatillos is a site that lets users browse movies, and view fun details about each one like their budget, a plot summary, and user community ratings. It's designed for a fluid and accessible experience for users of varying levels of ability and internet literacy. It's currently deployed [here](https://rancid-tomatillos.vercel.app/).
  
 Rancid Tomatillos is a completely original concept that in no way resembles [another site](https://www.rottentomatoes.com/). If it did resemble another site it would do so purely for parody purposes. 
 
@@ -23,6 +23,7 @@ This app is built in `React` using the `create-react-app` boilerplate. It also u
 -`cypress`
 
 ## Installation
+Again, Rancit Tomatillos is deployed [here](https://rancid-tomatillos.vercel.app/) if you'd like to view it in your browser. You can also run it locally if you'd like.
 To install this app: 
 ```
 git clone <<url>>
@@ -55,7 +56,7 @@ Rancid Tomatillos is completely responsive across all breakpoints, and is design
 We use [cypress](https://www.cypress.io/) for end to end and integration testing. In order to test the site run `npm run cypress` and you should be brought to a testing suite. The tests use stubbed api calls, but do expect the site to run locally. Make sure you've run `npm start` in an open tab and can visit the site before testing. 
 
 ## Future Iterations
-We aren't sure if we will be updating this project. If we can solve [That One Bug](https://github.com/thaomonster/rancid-tomatillos/issues/37) we almost certainly will. Whether or not we continue this work here are some improvements that could be made: 
+We aren't sure if we will be updating this project. Whether or not we continue this work here are some improvements that could be made: 
 
 -Right now there is no login system for users, or a system by which users can add their own ratings. This should be pretty easy to implement didn't have the time so it fell out of the scope for this project. 
 
